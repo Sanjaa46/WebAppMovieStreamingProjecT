@@ -1,132 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FREE Nice kino Website - the top free movies streaming website where you can watch latest movies, tv shows in HD for FREE. NO ADS!! WATCH NOW!!!"
+    />
+    <meta name="Home page" content="main page" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="FREE Nice kino Website - the top free movies streaming website where you can watch latest movies, tv shows in HD for FREE. NO ADS!! WATCH NOW!!!">
-    <meta name="Home page" content="main page">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
 
     <script type="module" src="assets/scripts/modules/Movies.js"></script>
-    <script type="module" src="assets/scripts/modules/MovieMediumSized.js"></script>
+    <script
+      type="module"
+      src="assets/scripts/modules/MovieMediumSized.js"
+    ></script>
     <script type="module" src="assets/scripts/modules/index.js"></script>
 
     <title>Nice Kino</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header-component></header-component>
-    <!-- <header class="menu">
-        <a href="index.html" id="logo">Logo Movie</a>
-        <nav>
-            <ul class="nav-container">
-                <li class="nav-list">
-                    <a href="#">Төрөл</a>
-                    <div class="dropdown-menu">
-                        <ul>
-                            <li><a href="movies.html?genre=Adventure">Адал явдалт</a></li>
-                            <li><a href="movies.html?genre=Horror">Аймшгийн</a></li>
-                            <li><a href="movies.html?genre=Thriller">Аллага</a></li>
-                            <li><a href="movies.html?genre=Western">Вестерн</a></li>
-                            <li><a href="movies.html?genre=Crime">Гэмт хэрэгт</a></li>
-                            <li><a href="movies.html?genre=Family">Гэр бүлийн</a></li>
-                            <li><a href="movies.html?genre=War">Дайны</a></li>
-                            <li><a href="movies.html?genre=Drama">Драм</a></li>
-                            <li><a href="movies.html?genre=Comedy">Инээдмийн</a></li>
-                            <li><a href="movies.html?genre=Music">Мюзикл</a></li>
-                            <li><a href="movies.html?genre=Action">Тулаант</a></li>
-                            <li><a href="movies.html?genre=History">Түүхэн</a></li>
-                            <li><a href="movies.html?genre=Fairy">Үлгэрийн</a></li>
-                            <li><a href="movies.html?genre=Fantasy">Зөгнөлт</a></li>
-                            <li>
-                                <a href="movies.html?genre=Animation">Хүүхэлдэйн кино</a>
-                            </li>
-                            <li><a href="movies.html?genre=Sci-Fi">Ш/У уран зөгнөлт</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-list"><a href="movies.html?type=movie">Кино</a></li>
-                <li class="nav-list"><a href="movies.html?type=series">Цуврал</a></li>
-                <li class="nav-list"><a href="movies.html?type=tv_show">ТВ шоу</a></li>
-
-            </ul>
-        </nav>
-        <form class="search-container">
-            <img
-              src="assets/images/search.png"
-              alt="search-icon"
-              class="search-icon"
-            />
-            <input
-              type="text"
-              name="name"
-              id=""
-              class="search-input"
-              placeholder="Хайх..."
-            />
-          </form>
-        <a href="#" class="login-button">Нэвтрэх
-            <img src="assets/images/login-image.png" alt="login" class="login-image" height="30" width="30" />
-        </a>
-    </header>
-
-    <header class="hamburger-header">
-        <div class="off-screen-menu">
-            <ul class="nav-container-burger">
-                <li class="nav-list-burger">
-                    <a href="#">Төрөл</a>
-                    <div class="dropdown-menu-burger">
-                        <ul>
-                            <li><a href="movies.html?genre=Adventure">Адал явдалт</a></li>
-                            <li><a href="movies.html?genre=Horror">Аймшгийн</a></li>
-                            <li><a href="movies.html?genre=Thriller">Аллага</a></li>
-                            <li><a href="movies.html?genre=Western">Вестерн</a></li>
-                            <li><a href="movies.html?genre=Crime">Гэмт хэрэгт</a></li>
-                            <li><a href="movies.html?genre=Family">Гэр бүлийн</a></li>
-                            <li><a href="movies.html?genre=War">Дайны</a></li>
-                            <li><a href="movies.html?genre=Drama">Драм</a></li>
-                            <li><a href="movies.html?genre=Comedy">Инээдмийн</a></li>
-                            <li><a href="movies.html?genre=Music">Мюзикл</a></li>
-                            <li><a href="movies.html?genre=Action">Тулаант</a></li>
-                            <li><a href="movies.html?genre=History">Түүхэн</a></li>
-                            <li><a href="movies.html?genre=Fairy">Үлгэрийн</a></li>
-                            <li><a href="movies.html?genre=Fantasy">Зөгнөлт</a></li>
-                            <li>
-                                <a href="movies.html?genre=Animation">Хүүхэлдэйн кино</a>
-                            </li>
-                            <li><a href="movies.html?genre=Sci-Fi">Ш/У уран зөгнөлт</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-list-burger"><a href="movies.html?type=movie">Кино</a></li>
-                <li class="nav-list-burger"><a href="movies.html?type=series">Цуврал</a></li>
-                <li class="nav-list-burger"><a href="movies.html?type=tv_show">ТВ шоу</a></li>
-            </ul>
-        </div>
-
-        <nav>
-            <div class="ham-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-
-        <a href="index.html" id="logo">Logo Movie</a>
-        <a id="search-mobile"><img src="assets/images/search.png" alt="search-icon" class="search-icon"></a>
-        <a class="login-button">Нэвтрэх
-            <img src="assets/images/login-image.png" alt="login" class="login-image">
-        </a>
-    </header> -->
 
     <main>
-        <section id="slider-container">
+      <!-- <section id="slider-container">
             <div class="slider-wrapper">
                 <div class="slider">
 
@@ -177,73 +84,171 @@
                         <a href="#slide-3" class="slider-button"></a>
                     </div>
                 </div>
-        </section>
-        <!--Zar-->
-        <section id="advertise">
-            <a href="#"><img src="assets/images/adad.png" alt="zar" /></a>
-        </section>
-        <!--In uzelttei-->
-        <section class="most-viewed-movies-container">
-            <div class="header-of-movies">
-                <h2>Их үзэлттэй</h2>
+        </section> -->
+
+      <!-- Slider Test2 -->
+      <div class="slider1">
+        <div class="list1">
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/13reasonswhy.jpg"
+              alt="Movie_slider"
+            />
+            <div class="content1">
+              <div class="title1">Онцлох кино</div>
+              <div class="type1">13 Reasons Why</div>
+              <div class="description1">
+                lorem Ipsmakes you a beautiful looking movie. Lorem Ips appears
+                to be a beautiful movie. Lorem Ips appears to be a beautiful
+                movie.
+              </div>
+              <div class="button1">
+                <button>ҮЗЭХ</button>
+              </div>
             </div>
-            <div class="most-viewed-movies-slider">
-
+          </div>
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/1917.jpg"
+              alt="Movie_slider"
+            />
+            <div class="content1">
+              <div class="title1">Онцлох кино</div>
+              <div class="type1">1917</div>
+              <div class="description1">
+                lorem Ipsmakes you a beautiful looking movie. Lorem Ips appears
+                to be a beautiful movie. Lorem Ips appears to be a beautiful
+                movie.
+              </div>
+              <div class="button1">
+                <button>ҮЗЭХ</button>
+              </div>
             </div>
-            <button class="prev">
-                <img src="assets/images/button-prev.png" alt="button-prev">
-            </button>
-            <button class="next">
-                <img src="assets/images/button-next.png" alt="button-next">
-            </button>
-        </section>
-        <!--shineer nemegdsen-->
-        <section class="movie-poster-12" id="new-added-movies">
-            <div class="header-of-movies">
-                <h2>Шинээр нэмэгдсэн кинонууд</h2>
-                <div class="links">
-                    <a href="movies.html?type=movie">бусад</a>
-                    <img src="assets/images/more-button.png" alt="more">
-                </div>
+          </div>
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/60minutes.jpg"
+              alt="Movie_slider"
+            />
+            <div class="content1">
+              <div class="title1">Онцлох кино</div>
+              <div class="type1">60 minutes</div>
+              <div class="description1">
+                lorem Ipsmakes you a beautiful looking movie. Lorem Ips appears
+                to be a beautiful movie. Lorem Ips appears to be a beautiful
+                movie.
+              </div>
+              <div class="button1">
+                <button>ҮЗЭХ</button>
+              </div>
             </div>
-            <div class="movies-container-12">
-
+          </div>
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/americanhorrorstories.jpg"
+              alt="Movie_slider"
+            />
+            <div class="content1">
+              <div class="title1">Онцлох кино</div>
+              <div class="type1">American Horror Story</div>
+              <div class="description1">
+                lorem Ipsmakes you a beautiful looking movie. Lorem Ips appears
+                to be a beautiful movie. Lorem Ips appears to be a beautiful
+                movie.
+              </div>
+              <div class="button1">
+                <button>ҮЗЭХ</button>
+              </div>
             </div>
-        </section>
-        <!--shineer nemegdsen tsuwral-->
-        <section class="movie-poster-12" id="new-added-series">
-            <div class="header-of-movies">
-                <h2>Шинээр нэмэгдсэн цувралууд</h2>
-                <div class="links">
-                    <a href="movies.html?type=series">бусад</a>
-                    <img src="assets/images/more-button.png" alt="more">
-                </div>
-            </div>
+          </div>
+        </div>
+        <div class="thumbnail1">
+          <div class="item1">
+            <img
+              src="assets/images/medium-sized-movie/13reasonswhy.jpg"
+              alt="Movie_thumbnail"
+            />
+          </div>
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/1917.jpg"
+              alt="Movie_thumbnail"
+            />
+          </div>
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/60minutes.jpg"
+              alt="Movie_thumbnail"
+            />
+          </div>
+          <div class="item1">
+            <img
+              src="/app/assets/images/medium-sized-movie/americanhorrorstories.jpg"
+              alt="Movie_thumbnail"
+            />
+          </div>
+        </div>
+        <div class="arrowButtons1">
+          <button class="prev1"><</button>
+          <button class="next1">></button>
+        </div>
+      </div>
 
-            <div class="movies-container-12">
+      <!--Zar-->
+      <section id="advertise">
+        <a href="#"><img src="assets/images/adad.png" alt="zar" /></a>
+      </section>
+      <!--In uzelttei-->
+      <section class="most-viewed-movies-container">
+        <div class="header-of-movies">
+          <h2>Их үзэлттэй</h2>
+        </div>
+        <div class="most-viewed-movies-slider"></div>
+        <button class="prev">
+          <img src="assets/images/button-prev.png" alt="button-prev" />
+        </button>
+        <button class="next">
+          <img src="assets/images/button-next.png" alt="button-next" />
+        </button>
+      </section>
+      <!--shineer nemegdsen-->
+      <section class="movie-poster-12" id="new-added-movies">
+        <div class="header-of-movies">
+          <h2>Шинээр нэмэгдсэн кинонууд</h2>
+          <div class="links">
+            <a href="movies.html?type=movie">бусад</a>
+            <img src="assets/images/more-button.png" alt="more" />
+          </div>
+        </div>
+        <div class="movies-container-12"></div>
+      </section>
+      <!--shineer nemegdsen tsuwral-->
+      <section class="movie-poster-12" id="new-added-series">
+        <div class="header-of-movies">
+          <h2>Шинээр нэмэгдсэн цувралууд</h2>
+          <div class="links">
+            <a href="movies.html?type=series">бусад</a>
+            <img src="assets/images/more-button.png" alt="more" />
+          </div>
+        </div>
 
-            </div>
+        <div class="movies-container-12"></div>
+      </section>
 
-        </section>
+      <!-- Шинээр нэмэгдсэн ТВ шоу -->
 
-        <!-- Шинээр нэмэгдсэн ТВ шоу -->
+      <section class="movie-poster-12" id="new-added-tvshows">
+        <div class="header-of-movies">
+          <h2>Шинээр нэмэгдсэн ТВ шоу</h2>
+          <div class="links">
+            <a href="movies.html?type=tv_show">бусад</a>
+            <img src="assets/images/more-button.png" alt="more" />
+          </div>
+        </div>
 
-        <section class="movie-poster-12" id="new-added-tvshows">
-            <div class="header-of-movies">
-                <h2>Шинээр нэмэгдсэн ТВ шоу</h2>
-                <div class="links">
-                    <a href="movies.html?type=tv_show">бусад</a>
-                    <img src="assets/images/more-button.png" alt="more">
-                </div>
-            </div>
-
-            <div class="movies-container-12">
-
-            </div>
-
-        </section>
+        <div class="movies-container-12"></div>
+      </section>
     </main>
-    
 
     <!-- <footer class="site-footer">
         <div class="footer-icons">
@@ -275,4 +280,5 @@
     <script type="module" src="assets/scripts/component/footer.js"></script>
     <script type="module" src="assets/scripts/component/header.js"></script>
     <script type="module" src="assets/scripts/component/filter.js"></script>
-</body>
+  </body>
+</html>

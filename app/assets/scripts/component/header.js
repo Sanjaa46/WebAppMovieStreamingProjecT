@@ -4,7 +4,7 @@ window.customElements.define('bookmarked-component', BookmarkedComponent);
 class HeaderComponent extends HTMLElement {
   constructor() {
     super();
-    this.isLoggedIn = true;
+    this.isLoggedIn = false;
   }
 
   connectedCallback() {
@@ -63,6 +63,23 @@ class HeaderComponent extends HTMLElement {
         window.location.href = 'movies.html';
       }
     });
+
+    document.getElementById('toggle-signup').addEventListener('click', function () {
+      document.querySelector('.login-popup').style.display = 'none';
+      document.querySelector('.signup-popup').style.display = 'block';
+    });
+
+    document.getElementById('toggle-login').addEventListener('click', function () {
+      document.querySelector('.signup-popup').style.display = 'none';
+      document.querySelector('.login-popup').style.display = 'block';
+    });
+
+    document.querySelectorAll('.close-btn img').forEach(function (element) {
+      element.addEventListener('click', function () {
+        document.querySelector('.popup').style.display = 'none';
+      });
+    });
+
   }
 
   render() {
@@ -422,7 +439,7 @@ class HeaderComponent extends HTMLElement {
                 </li>
                 <li class="nav-list"><a id="movies-option" href="movies.html?type=movie" data-type="movie">Кино</a></li>
                 <li class="nav-list"><a id="series-option" href="movies.html?type=series" data-type="series">Цуврал</a></li>
-                <li class="nav-list"><a id="tv-shows-option" href="movies.html?type=tv_show" data-type="tv_show">ТВ шоу</a></li>
+                <li class="nav-list"><a id="tv-shows-option" href="movies.html?type="tv_show" data-type="tv_show">ТВ шоу</a></li>
             </ul>
         </nav>
         <form class="search-container">
@@ -442,7 +459,7 @@ class HeaderComponent extends HTMLElement {
         <a href="#" class="login-button">Нэвтрэх
             <img src="assets/images/login-image.png" alt="login" class="login-image" height="30" width="30" />
         </a>
-        <img src="assets/images/profile.png" alt="login" class="profile" height="30" width="30" />
+        <img src="assets/images/user.png" alt="login" class="profile" height="30" width="30" />
     </header>
 
     <header class="hamburger-header">
@@ -493,34 +510,59 @@ class HeaderComponent extends HTMLElement {
             <img src="assets/images/login-image.png" alt="login" class="login-image" height="30" width="30" />
         </a>
         <a href="#" class="profile">
-          <img src="assets/images/profile.png" alt="login" height="30" width="30" />
+          <img src="assets/images/user.png" alt="login" height="30" width="30" />
         </a>
     </header>
     <div class="popup">
-        <section class="login-popup">
-            <div class="close-btn">
-                <img src="assets/images/Cancel.png" alt="close-btn">
-            </div>
-            <article class="form">
-                <h2>Нэвтрэх</h2>
-                <div class="form-element">
-                    <input type="text" id="email" placeholder="Email-ээ оруулна уу">
-                </div>
-                <div class="form-element">
-                    <input type="password" id="password" placeholder="Нууц үгээ оруулна уу">
-                </div>
-                <div class="form-element">
-                    <a href="#">Нууц үгээ мартсан уу?</a>
-                </div>
-                <div class="form-element">
-                    <button>Нэвтрэх</button>
-                </div>
-                <div class="form-element">
-                    <a href="#" id="toggle-signup">Бүртгүүлэх</a>
-                </div>
-            </article>
-        </section>
-    </div>
+      <section class="login-popup">
+          <div class="close-btn">
+              <img src="assets/images/Cancel.png" alt="close-btn">
+          </div>
+          <article class="form">
+              <h2>Нэвтрэх</h2>
+              <div class="form-element">
+                  <input type="text" id="email" placeholder="Email-ээ оруулна уу">
+              </div>
+              <div class="form-element">
+                  <input type="password" id="password" placeholder="Нууц үгээ оруулна уу">
+              </div>
+              <div class="form-element">
+                  <a href="#">Нууц үгээ мартсан уу?</a>
+              </div>
+              <div class="form-element">
+                  <button>Нэвтрэх</button>
+              </div>
+              <div class="form-element">
+                  <a href="#" id="toggle-signup">Бүртгүүлэх</a>
+              </div>
+          </article>
+      </section>
+
+      <section class="signup-popup" style="display: none;">
+          <div class="close-btn">
+              <img src="assets/images/Cancel.png" alt="close-btn">
+          </div>
+          <article class="form">
+              <h2>Бүртгүүлэх</h2>
+              <div class="form-element">
+                  <input type="text" id="signup-email" placeholder="Email-ээ оруулна уу">
+              </div>
+              <div class="form-element">
+                  <input type="password" id="signup-password" placeholder="Нууц үгээ оруулна уу">
+              </div>
+              <div class="form-element">
+                  <input type="password" id="confirm-password" placeholder="Нууц үгээ дахин оруулна уу">
+              </div>
+              <div class="form-element">
+                  <button>Бүртгүүлэх</button>
+              </div>
+              <div class="form-element">
+                  <a href="#" id="toggle-login">Нэвтрэх</a>
+              </div>
+          </article>
+      </section>
+  </div>
+
     <div class="profile-popup">
         <ul>
             <li class="profile-option"><a href="intro.html"><img src="assets/images/continue.png" alt="continue">Үргэлжлүүлэн үзэх</a></li>
