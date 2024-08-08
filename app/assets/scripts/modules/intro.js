@@ -16,7 +16,7 @@ export default class Intro {
     this.duration = movie.duration;
     this.genre = movie.genre;
     this.trailer = movie.trailer;
-    this.cover = this.cover;
+    this.cover = movie.cover;
   }
 
   init() {
@@ -31,17 +31,8 @@ export default class Intro {
   }
 
   bookmark() {
-    this.saveToLocalStorage(this.name);
-    const bookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
-    console.log('Bookmarked Movies:', bookmarks);
-  }
-
-  saveToLocalStorage(movieName) {
-    let bookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
-    if (!bookmarks.includes(movieName)) {
-      bookmarks.push(movieName);
-      localStorage.setItem('bookmarkedMovies', JSON.stringify(bookmarks));
-    }
+    const event = new CustomEvent('bookmark', { detail: this });
+    document.dispatchEvent(event);
   }
 
   render() {
@@ -103,9 +94,7 @@ async function renderMovie() {
   const movieContainer = document.querySelector(".intro-movie");
   movieContainer.innerHTML = moviesData;
 
-  mov.init(); // Initialize event listeners after rendering
-
-  //-------------------------------------//
+  mov.init();
   const recommendations = await filterMoviesByGenres();
   recommendations.sort((a, b) => b.since - a.since);
 
@@ -121,8 +110,10 @@ async function renderMovie() {
 
 async function fetchMovies() {
   try {
-    const response = await fetch('/app/assets/scripts/modules/movies.json');
-    const data = await response.json();
+    const response = await fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87');
+    const jsonResponse = await response.json();
+    const data = jsonResponse.record;
+
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);

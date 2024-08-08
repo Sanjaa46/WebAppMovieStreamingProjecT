@@ -1,38 +1,49 @@
 export default class BookmarkedComponent extends HTMLElement {
-    // Define movies as a class property
-    movies = new Array();
-
     constructor() {
         super();
-        this.movies = [];
+        this.movies = this.loadBookmarkedMovies();
     }
 
     connectedCallback() {
         this.render();
-        this.handleBookmarkClick = this.handleBookmarkClick.bind(this);
-        this.addEventListener('click', this.handleBookmarkClick);
+        this.handleBookmarkEvent = this.handleBookmarkEvent.bind(this);
+        document.addEventListener('bookmark', this.handleBookmarkEvent);
+        this.addEventListener('click', this.showBookmarkedMovies.bind(this));
     }
 
     disconnectedCallback() {
-        // Remove event listener when the component is removed from the DOM
-        this.removeEventListener('click', this.handleBookmarkClick);
+        document.removeEventListener('bookmark', this.handleBookmarkEvent);
+        this.removeEventListener('click', this.showBookmarkedMovies.bind(this));
     }
 
-    handleBookmarkClick(event) {
-        if (event.target.id === 'bookmarked') {
-            const movieNames = this.movies.map(movie => movie.name);
-            this.storeBookmarkedMovies(movieNames);
+    handleBookmarkEvent(event) {
+        const movie = event.detail;
+        if (!this.movies.some(m => m.name === movie.name)) {
+            this.movies.push(movie);
+            this.storeBookmarkedMovies(this.movies);
+            console.log('Bookmarked movie:', movie.name);
         }
     }
 
-
     storeBookmarkedMovies(movies) {
-        this.movies.push(movies);
-        console.log(movies);
+        localStorage.setItem('bookmarkedMovies', JSON.stringify(movies));
+    }
+
+    loadBookmarkedMovies() {
+        const storedMovies = localStorage.getItem('bookmarkedMovies');
+        return storedMovies ? JSON.parse(storedMovies) : [];
     }
 
     render() {
         this.innerHTML = `
         <li class="profile-option"><a href="movies.html" id="bookmarked"><img src="assets/images/bookmark.png" alt="bookmark">Хадгалсан</a></li>`;
+    }
+
+    showBookmarkedMovies(event) {
+        event.preventDefault();
+        const bookmarkedMoviesEvent = new CustomEvent('show-bookmarked-movies', {
+            detail: { movies: this.movies }
+        });
+        document.dispatchEvent(bookmarkedMoviesEvent);
     }
 }

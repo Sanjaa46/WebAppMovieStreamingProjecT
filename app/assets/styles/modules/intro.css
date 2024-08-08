@@ -1,4 +1,9 @@
 /*intro-movie*/
+.intro-movie {
+  margin-top: 30px;
+  z-index: -1;
+}
+
 .intro-movie .cover-image {
   background-size: cover;
   background-position: center;
@@ -9,11 +14,11 @@
 .intro-movie:before {
   content: "";
   position: absolute;
+  margin-top: 40px;
   top: 8%;
   left: 0;
   width: 80%;
   height: 605px;
-
   background: linear-gradient(to right, rgb(69, 69, 69), transparent);
 }
 
@@ -21,7 +26,7 @@
   display: flex;
   justify-content: flex-start;
   font-size: 20px;
-
+  margin-top: 30px;
   position: absolute;
   top: 12%;
   left: 5%;
@@ -176,6 +181,8 @@
   .intro-movie:before {
     content: "";
     position: absolute;
+    margin-top: 30px;
+    z-index: -1;
     top: 9%;
     left: 0;
     width: 80%;
