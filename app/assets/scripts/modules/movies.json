@@ -719,7 +719,7 @@
     },
     {
         "name": "60 Minutes",
-        "since": "1968",
+        "since": "1968",    
         "duration": "47",
         "genre": ["Documentary", "News"],
         "poster": "/app/assets/images/small-sized-movie/60Minutes.jpg",
