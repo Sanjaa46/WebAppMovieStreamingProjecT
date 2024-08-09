@@ -11,14 +11,14 @@ export default class MovieMediumSized {
         const genres = this.genre.join(', ');
         return `
         <article class="movie-medium-sized"><a href="intro.html?name=${this.name}&genre=${this.genre}">
-        <p class="rank">${paddedRank}</p>
-        <div class="details">
-            <h3 class="name">${this.name}</h3>
-            <p class="movie-type">${genres}</p>
-        </div>
-        <div class="poster">
-            <img src="${this.poster}" alt="movie-medium-sized-poster">
-        </div></a>
-    </article>`;
+            <p class="rank">${paddedRank}</p>
+            <div class="details">
+                <h3 class="name">${this.name}</h3>
+                <p class="movie-type">${genres}</p>
+            </div>
+            <div class="poster">
+                <img src="${this.poster}" alt="movie-medium-sized-poster">
+            </div></a>
+        </article>`;
     }
 }

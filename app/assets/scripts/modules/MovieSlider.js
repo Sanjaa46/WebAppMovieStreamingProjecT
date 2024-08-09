@@ -1,24 +1,27 @@
 export default class MovieSliderItem {
     constructor(movie) {
-        this.title = movie.title;
+        this.name = movie.name;
         this.genre = movie.genre;
-        this.description = movie.description;
-        this.poster = movie.poster;
+        this.cover = movie.cover;
+        // this.age = movie.age;
     }
 
     render() {
+        const genres = this.genre.join('/');
         return `
         <div class="item1">
-            <img src="${this.poster}" alt="Movie_slider"/>
+            <img src="${this.cover}" alt="Movie_slider"/>
             <div class="content1">
                 <div class="title1">Онцлох кино</div>
-                <div class="type1">${this.title}</div>
+                <div class="type1">${this.name}</div>
                 <div class="description1">
-                    ${this.description}
+                    ${genres}
                 </div>
-                <div class="button1">
-                    <button>ҮЗЭХ</button>
-                </div>
+                <a href="intro.html?name=${this.name}&genre=${this.genre}">
+                    <div class="button1">
+                        <button>ҮЗЭХ</button>
+                    </div>
+                </a>
             </div>
         </div>`;
     }

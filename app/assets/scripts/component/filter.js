@@ -222,30 +222,118 @@ export default class FilterComponent extends HTMLElement {
       background-color: #555;
       border-radius: 5px;
     }
-    
+    @media (max-width: 1024px) {
+        .filter ul {
+            gap: 10px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "search-middle filter-dropdown-1 filter-dropdown-2"
+                "filter-dropdown-3 filter-dropdown-4 filter-dropdown-5"
+                "filter-button filter-button filter-button";
+            justify-items: stretch;
+            padding: 5px;
+        }
+
+        .filter > div {
+            padding: 10px 30px;
+        }
+
+        .search-middle {
+            width: 200px;
+        }
+
+        .filter-dropdown select {
+            width: 180px;
+            font-size: 18px;
+        }
+
+        .filter li > button.filter-button {
+            width: 95px;
+            height: 30px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 767px) {
+      .filter ul {
+          gap: 10px;
+          display: grid;
+          grid-template-columns: 200px 200px;
+          grid-template-rows: auto;
+          grid-template-areas:
+              "search-middle filter-dropdown-1"
+              "filter-dropdown-2 filter-dropdown-3"
+              "filter-dropdown-4 filter-dropdown-5"
+              "filter-button filter-button";
+          justify-items: stretch;
+          padding: 5px;
+      }
+
+        .filter > div {
+            padding: 10px 20px;
+        }
+
+        .search-middle {
+            width: 200px;
+        }
+
+        .filter-dropdown select {
+            width: 160px;
+            font-size: 16px;
+        }
+
+        .filter li > button.filter-button {
+            width: 90px;
+            height: 28px;
+            font-size: 13px;
+        }
+    }
     @media (max-width: 480px) {
       .filter ul {
-        gap: 5px;
-        display: grid;
-        grid-template-columns: 160px 160px;
-        grid-template-rows: auto;
-        grid-template-areas:
-          ".search-middle .filter-dropdown-1"
-          ".filter-dropdown-2 .filter-dropdown-3"
-          "filter-dropdown-4 .filter-dropdown-5"
-          ".filter-button.filter-button ";
-        justify-items: stretch;
+          gap: 5px;
+          display: grid;
+          grid-template-columns: 160px 160px;
+          grid-template-rows: auto;
+          grid-template-areas:
+              "search-middle filter-dropdown-1"
+              "filter-dropdown-2 filter-dropdown-3"
+              "filter-dropdown-4 filter-dropdown-5"
+              "filter-button filter-button";
+          justify-items: stretch;
+          padding: 5px;
       }
+      
+      .filter > div {
+          padding: 10px 10px;
+      }
+
       .search-middle {
-        display: flex;
-        width: 160px;
-        height: 33px;
-        padding: 5px 10px;
-        align-items: center;
-        background-color: var(--color-gray);
-        border-radius: 5px;
+          width: 160px;
+          padding: 5px 10px;
+          border-radius: 5px;
+      }
+
+      .filter-dropdown select {
+          width: 150px;
+          font-size: 14px;
+      }
+
+      .filter li > button.filter-button {
+          width: 80px;
+          height: 25px;
+          font-size: 12px;
+      }
+
+      .pagination a {
+          padding: 5px;
+          font-size: 14px;
       }
     }
+
+
+
     </style>
     
     <section class="filter">

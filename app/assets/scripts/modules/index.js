@@ -107,6 +107,31 @@ class MostViewed {
 const mostViewed = new MostViewed();
 mostViewed.list();
 
+
+function handleNext() {
+    const slider = document.querySelector('.most-viewed-movies-slider');
+    const movieWidth = document.querySelector('.movie-medium-sized').offsetWidth;
+    const scrollDistance = movieWidth + 20; // including margin
+    slider.scrollLeft += scrollDistance;
+}
+
+// Handle the "prev" button click
+function handlePrev() {
+    const slider = document.querySelector('.most-viewed-movies-slider');
+    const movieWidth = document.querySelector('.movie-medium-sized').offsetWidth;
+    const scrollDistance = movieWidth + 20; // including margin
+    slider.scrollLeft -= scrollDistance;
+}
+
+// Add event listeners to the buttons
+document.querySelector('.next').addEventListener('click', handleNext);
+document.querySelector('.prev').addEventListener('click', handlePrev);
+
+
+
+
+
+
 let nextBtn = document.querySelector(".next1");
 let prevBtn = document.querySelector(".prev1");
 
@@ -115,7 +140,12 @@ let sliderList = document.querySelector(".slider1 .list1");
 let thumbnail = document.querySelector(".slider1 .thumbnail1");
 let thumbnailItems = document.querySelectorAll(".thumbnail1 .item1");
 
-thumbnail.appendChild(thumbnailItems[0]);
+if (thumbnailItems[0]) {
+    thumbnail.appendChild(thumbnailItems[0]);
+} else {
+    console.error("No thumbnail items found to append");
+}
+
 
 nextBtn.onclick = function () {
     moveSlider("next");
@@ -147,30 +177,6 @@ function moveSlider(direction) {
 
 
 
-
-
-async function fetchMovies() {
-    try {
-        const response = await fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87');
-        const jsonResponse = await response.json();
-        const data = jsonResponse.record;
-
-        return data;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return [];
-    }
-}
-
-async function searchMovies() {
-    const movies = await fetchMovies();
-    const urlParams = new URLSearchParams(window.location.search);
-    const name = urlParams.get('name');
-    const searchedMovie = movies.find(movie => movie.name.toLowerCase() === name.toLowerCase());
-    return searchedMovie;
-}
-
-
 const sliderContainer = document.querySelector('.list1');
 const thumbnailContainer = document.querySelector('.thumbnail1');
 
@@ -179,13 +185,23 @@ let sliderMovies = [];
 fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87')
     .then(response => response.json())
     .then(data => {
-        // Assuming the movies are in the 'movies' key of the returned data
+        console.log(data); // Inspect the data structure
+
+        // Access the 'record' array that contains the movies
+        const movies = data.record;
+
+        console.log(movies); // Check if this is the array of movies
+
         const movieNames = ['13 Reasons Why', '1917', 'American Horror Story', '60 Minutes'];
 
         // Filter movies to match the desired titles
-        sliderMovies = data.movies.filter(movie => movieNames.includes(movie.title.toLowerCase()));
+        if (Array.isArray(movies)) {
+            sliderMovies = movies.filter(movie => movieNames.includes(movie.name));
+        } else {
+            console.error('Movies is not an array:', movies);
+        }
 
-        // Now render the movies
+        // Render the movies
         sliderMovies.forEach(movie => {
             const sliderItem = new MovieSliderItem(movie);
             sliderContainer.innerHTML += sliderItem.render();
@@ -195,12 +211,3 @@ fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87')
         });
     })
     .catch(error => console.error('Error fetching movies:', error));
-
-
-sliderMovies.forEach(movie => {
-    const sliderItem = new MovieSliderItem(movie);
-    sliderContainer.innerHTML += sliderItem.render();
-
-    const thumbnailItem = new MovieThumbnailItem(movie.poster);
-    thumbnailContainer.innerHTML += thumbnailItem.render();
-});
