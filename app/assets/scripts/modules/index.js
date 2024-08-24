@@ -25,9 +25,15 @@ class Movies {
                 console.error('Invalid container type');
                 return;
         }
+
+        // Update the API URL
+        const API_URL = 'https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87';
+
         try {
-            const response = await fetch('/app/assets/scripts/modules/movies.json');
-            const data = await response.json();
+            // Fetch data from the new API URL without headers
+            const response = await fetch(API_URL);
+            const jsonResponse = await response.json();
+            const data = jsonResponse.record; // Access the 'record' field where the data is stored
 
             // Sort movies by 'since' year in descending order
             data.sort((a, b) => b.since - a.since);
@@ -49,6 +55,7 @@ class Movies {
         }
     }
 };
+
 
 const movies = new Movies();
 movies.list('new-added-movies');
@@ -185,12 +192,9 @@ let sliderMovies = [];
 fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87')
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Inspect the data structure
 
         // Access the 'record' array that contains the movies
         const movies = data.record;
-
-        console.log(movies); // Check if this is the array of movies
 
         const movieNames = ['13 Reasons Why', '1917', 'American Horror Story', '60 Minutes'];
 

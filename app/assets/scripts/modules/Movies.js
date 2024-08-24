@@ -14,7 +14,7 @@ export default class Movie {
             <article class="movie-small-sized"><a href="intro.html?name=${this.name}&genre=${this.genre}">
                 <div class="details">
                     <h3 class="Name">${this.name}</h3>
-                    <p class="year-and-duration"><img src="/app/assets/images/movie-icon.png" alt="movie-icon" class="movie-icon"> ${this.since} - ${this.duration} мин</p>
+                    <p class="year-and-duration"><img src="/assets/images/movie-icon.png" alt="movie-icon" class="movie-icon"> ${this.since} - ${this.duration} мин</p>
                     <div class="info">
                         <p>Directed by ${this.director}</p>
                     </div>

@@ -295,12 +295,13 @@ export default class MovieListComponent extends HTMLElement {
   get movies() {
     return JSON.parse(this.getAttribute('movies')) || [];
   }
-
+  // TODO: bookmark fucntion ajildag bolgoh
   handleBookmark(event) {
     const bookmarkedMovieNames = event.detail.movies;
     const bookmarkedMovies = this.movies.filter(movie => bookmarkedMovieNames.includes(movie.name));
     this.renderMovies(bookmarkedMovies);
   }
+  // FIXME: Bookmark function-g ajildag bolgoh
 }
 
 customElements.define('movie-list', MovieListComponent);

@@ -1,37 +1,34 @@
 const express = require('express');
-const fetchData = require('C:/Users/sanja/OneDrive/ドキュメント/GitHub/WebAppMovieStreamingProject/app/assets/scripts/webapi/api.js');
-const bodyParser = require('body-parser');
+const axios = require('axios');
+const cors = require('cors');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
-// Middleware to parse JSON requests
-app.use(bodyParser.json());
+const API_URL = process.env.API_URL || 'https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87';
 
-// Serve static files from the "app" directory
-app.use(express.static(path.join(__dirname, 'app')));
+// Middleware
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'app'))); // Ensure the correct path is used
 
-// Serve the index.html file at the root URL
+// Serve the main HTML file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'app', 'index.html'));
+  res.sendFile(path.join(__dirname, 'app', 'index.html')); // Adjust the path if necessary
 });
 
-// Endpoint to fetch movie data
+// Route to fetch movies data
 app.get('/movies', async (req, res) => {
-    const data = await fetchData();
-    if (data) {
-        res.json(data);
-    } else {
-        res.status(500).json({ error: 'Failed to fetch data' });
-    }
-});
-
-// Handle 404 errors for undefined routes
-app.use((req, res, next) => {
-    res.status(404).send('Sorry, cannot find that!');
+  try {
+    const response = await axios.get(API_URL);
+    const movies = response.data.record;
+    res.json(movies);
+  } catch (error) {
+    console.error('Error fetching movies:', error.message);
+    res.status(500).json({ message: 'Error fetching movies', error: error.message });
+  }
 });
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
