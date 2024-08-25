@@ -44,7 +44,7 @@ class HeaderComponent extends HTMLElement {
       }
     });
 
-    if (this.isLoggedIn) {
+    if (!this.isLoggedIn) {
       this.querySelector('.login-button').style.display = "none";
       this.querySelector('.profile').style.display = "flex";
     } else {
