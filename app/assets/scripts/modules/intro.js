@@ -16,37 +16,71 @@ export default class Intro {
     this.duration = movie.duration;
     this.genre = movie.genre;
     this.trailer = movie.trailer;
-    this.cover = movie.cover;
+    this.seasons = movie.seasons;
   }
 
-  init() {
-    const bookmarkElement = this.bookmarkElement;
-    if (bookmarkElement) {
-      bookmarkElement.addEventListener('click', this.bookmark.bind(this));
-    }
+  renderSeasons() {
+    if (!this.seasons || this.seasons.length === 0) return '';
+  
+    let seasonsOptions = '';
+    let episodesOptions = '';
+  
+    this.seasons.forEach(season => {
+      seasonsOptions += `<option value="${season.season_number}">Season ${season.season_number}</option>`;
+  
+      if (season.season_number === 1) {
+        season.episodes.forEach(episode => {
+          episodesOptions += `<option value="${episode.episode_number}">Episode ${episode.episode_number}: ${episode.title}</option>`;
+        });
+      }
+    });
+  
+    return `
+      <form id="filterForm">
+        <ul>
+          <li class="filter-dropdown">
+            <select id="season" name="season">
+              ${seasonsOptions}
+            </select>
+          </li>
+          <li class="filter-dropdown">
+            <select id="episode" name="episode">
+              ${episodesOptions}
+            </select>
+          </li>
+        </ul>
+      </form>`;
   }
+  
+  addSeasonChangeListener() {
+    const seasonDropdown = document.getElementById('season');
+    const episodeDropdown = document.getElementById('episode');
 
-  get bookmarkElement() {
-    return document.getElementById('bookmark');
-  }
-
-  bookmark() {
-    const event = new CustomEvent('bookmark', { detail: this });
-    document.dispatchEvent(event);
+    seasonDropdown.addEventListener('change', (event) => {
+      const selectedSeasonNumber = parseInt(event.target.value, 10);
+      const selectedSeason = this.seasons.find(season => season.season_number === selectedSeasonNumber);
+      
+      if (selectedSeason) {
+        let episodesOptions = '';
+        selectedSeason.episodes.forEach(episode => {
+          episodesOptions += `<option value="${episode.episode_number}">Episode ${episode.episode_number}: ${episode.title}</option>`;
+        });
+        episodeDropdown.innerHTML = episodesOptions;
+      }
+    });
   }
 
   render() {
     const genres = this.genre.join('/');
+    const seasonsHtml = this.renderSeasons();
+  
     return `
         <img src="${this.cover}" class="cover-image" />
-        <div class="studio-name">
-          <p><strong>Studio:Warner bros</strong></p>
-        </div>
         <div class="poster">
           <img src="${this.poster}" alt="movie-small-sized-poster" />
           <p class="procuder-actor-name">${this.director} | ${this.actor}</p>
         </div>
-
+  
         <div class="intro-details">
           <h2>${this.name}</h2>
           <div class="movie-rating">
@@ -68,6 +102,7 @@ export default class Intro {
               believes he and his family are the rightful heirs.
             </p>
           </div>
+          ${seasonsHtml}
           <div class="buttons">
             <button class="show-button">
               <span class="glyphicon glyphicon-play"></span> Үзэх
@@ -94,7 +129,9 @@ async function renderMovie() {
   const movieContainer = document.querySelector(".intro-movie");
   movieContainer.innerHTML = moviesData;
 
-  mov.init();
+  // Attach the event listener for season change
+  mov.addSeasonChangeListener();
+
   const recommendations = await filterMoviesByGenres();
   recommendations.sort((a, b) => b.since - a.since);
 
@@ -129,7 +166,8 @@ async function searchMovies() {
   return searchedMovie;
 }
 
-renderMovie();
+document.addEventListener('DOMContentLoaded', renderMovie);
+
 
 async function filterMoviesByGenres() {
   const movies = await fetchMovies();
@@ -141,3 +179,5 @@ async function filterMoviesByGenres() {
   });
   return filteredMovies;
 }
+
+

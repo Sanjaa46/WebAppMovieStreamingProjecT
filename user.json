@@ -1,0 +1,45 @@
+[
+    {
+      "username": "johndoe",
+      "email": "johndoe@example.com",
+      "passwordHash": "hashed_password_1234",
+      "watchHistory": [
+        {
+          "movieId": ObjectId("64e2b3c7f7e2b2b2c3a1c1d4"),
+          "watchedAt": ISODate("2024-08-26T12:00:00Z")
+        }
+      ],
+      "favorites": [
+        ObjectId("64e2b3c7f7e2b2b2c3a1c1d4"),
+        ObjectId("64e2b3c7f7e2b2b2c3a1c1d5")
+      ],
+      "createdAt": ISODate("2024-08-26T00:00:00Z"),
+      "updatedAt": ISODate("2024-08-26T00:00:00Z")
+    },
+    {
+      "username": "janedoe",
+      "email": "janedoe@example.com",
+      "passwordHash": "hashed_password_5678",
+      "watchHistory": [
+        {
+          "movieId": ObjectId("64e2b3c7f7e2b2b2c3a1c1d6"),
+          "watchedAt": ISODate("2024-08-25T15:30:00Z")
+        }
+      ],
+      "favorites": [
+        ObjectId("64e2b3c7f7e2b2b2c3a1c1d6")
+      ],
+      "createdAt": ISODate("2024-08-25T00:00:00Z"),
+      "updatedAt": ISODate("2024-08-25T00:00:00Z")
+    },
+    {
+      "username": "alicewonder",
+      "email": "alicewonder@example.com",
+      "passwordHash": "hashed_password_9101",
+      "watchHistory": [],
+      "favorites": [],
+      "createdAt": ISODate("2024-08-24T00:00:00Z"),
+      "updatedAt": ISODate("2024-08-24T00:00:00Z")
+    }
+  ]
+  
