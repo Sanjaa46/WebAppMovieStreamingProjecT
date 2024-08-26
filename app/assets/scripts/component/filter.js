@@ -1,10 +1,12 @@
+import { fetchAllMovies } from '../webapi/api.js';
+
 export default class FilterComponent extends HTMLElement {
   movies = [];
   filteredMovies = [];
 
   constructor() {
     super();
-    this.fetchMovies();
+    this.fetchMoviesData();
   }
 
   connectedCallback() {
@@ -13,7 +15,7 @@ export default class FilterComponent extends HTMLElement {
     if (form) {
       form.addEventListener('submit', this.handleFormSubmit.bind(this));
     }
-    this.fetchMovies().then(() => {
+    this.fetchMoviesData().then(() => {
       this.applyUrlFilters();
     });
   }
@@ -27,18 +29,14 @@ export default class FilterComponent extends HTMLElement {
     const rating = urlParams.get('rating') || 'all';
     const name = urlParams.get('name') || '';
 
-    console.log(type);
-
     this.filteredMovies = this.filterMovies(type, country, age, genre, rating, name);
     this.renderMovies();
     this.updateTitle();
   }
 
-  async fetchMovies() {
+  async fetchMoviesData() {
     try {
-      const response = await fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87');
-      this.movies = await response.json();
-      this.movies = this.movies.record;
+      this.movies = await fetchAllMovies();
       this.filteredMovies = [...this.movies];
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -53,7 +51,7 @@ export default class FilterComponent extends HTMLElement {
     movieList.movies = this.filteredMovies;
   }
 
-  async handleFormSubmit(event) {
+  handleFormSubmit(event) {
     event.preventDefault();
 
     const type = this.querySelector('#type').value;

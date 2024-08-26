@@ -1,6 +1,7 @@
 [
     {
         "name": "13 Reasons Why",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2017",
         "duration": "60",
         "genre": [
@@ -21,6 +22,21 @@
         "age": "16+",
         "country": "United States",
         "views": "1500000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/13reasonswhy.jpg",
         "seasons": [
             {
@@ -115,6 +131,7 @@
     },
     {
         "name": "1917",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2019",
         "duration": "119",
         "genre": [
@@ -134,10 +151,26 @@
         "age": "18+",
         "country": "United Kingdom",
         "views": "2300000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/1917.jpg"
     },
     {
         "name": "American Horror Story",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2011",
         "duration": "60",
         "genre": [
@@ -158,10 +191,26 @@
         "age": "18+",
         "country": "United States",
         "views": "1800000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/americanhorrorstories.jpg"
     },
     {
         "name": "Archer",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2009",
         "duration": "22",
         "genre": [
@@ -182,10 +231,26 @@
         "age": "18+",
         "country": "United States",
         "views": "2100000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/archer.jpg"
     },
     {
         "name": "Avatar",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2009",
         "duration": "162",
         "genre": [
@@ -206,10 +271,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "3000000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/avatar.jpg"
     },
     {
         "name": "Avengers",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2012",
         "duration": "143",
         "genre": [
@@ -230,10 +311,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "3200000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/avengers.jpg"
     },
     {
         "name": "Beef",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2018",
         "duration": "60",
         "genre": [
@@ -252,10 +349,26 @@
         "age": "PG",
         "country": "United Kingdom",
         "views": "1200000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/beef.jpg"
     },
     {
         "name": "Call Me by Your Name",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2017",
         "duration": "132",
         "genre": [
@@ -275,10 +388,26 @@
         "age": "R",
         "country": "Italy",
         "views": "2500000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/callmebyyourname.jpg"
     },
     {
         "name": "Collapse",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2009",
         "duration": "82",
         "genre": [
@@ -295,10 +424,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "900000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/collapse.jpg"
     },
     {
         "name": "Bohemian Rhapsody",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2018",
         "duration": "134",
         "genre": [
@@ -319,10 +464,26 @@
         "age": "PG-13",
         "country": "United Kingdom",
         "views": "2700000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/bohemianrhapsody.jpg"
     },
     {
         "name": "Us",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2019",
         "duration": "116",
         "genre": [
@@ -343,10 +504,26 @@
         "age": "18+",
         "country": "United States",
         "views": "1400000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/Us.jpg"
     },
     {
         "name": "Batman",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2022",
         "duration": "176",
         "genre": [
@@ -367,10 +544,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "55000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/batman.jpg"
     },
     {
         "name": "Fight Club",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1999",
         "duration": "139",
         "genre": [
@@ -389,10 +582,26 @@
         "age": "R",
         "country": "United States",
         "views": "72000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/fightclub.jpg"
     },
     {
         "name": "Goblin",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "60",
         "genre": [
@@ -413,10 +622,26 @@
         "age": "16+",
         "country": "South Korea",
         "views": "43000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/goblin.jpg"
     },
     {
         "name": "The Godfather",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1972",
         "duration": "175",
         "genre": [
@@ -436,10 +661,26 @@
         "age": "18+",
         "country": "United States",
         "views": "96000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thegodfather.jpg"
     },
     {
         "name": "Godzilla",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2014",
         "duration": "123",
         "genre": [
@@ -460,10 +701,26 @@
         "age": "PG-13",
         "country": "Japan",
         "views": "82000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/godzilla.jpg"
     },
     {
         "name": "Gravity",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2013",
         "duration": "91",
         "genre": [
@@ -484,10 +741,26 @@
         "age": "PG-13",
         "country": "United Kingdom",
         "views": "67000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/gravity.jpg"
     },
     {
         "name": "Argylle",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2022",
         "duration": "90",
         "genre": [
@@ -507,10 +780,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "41000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/argylle.jpg"
     },
     {
         "name": "Interstellar",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2014",
         "duration": "169",
         "genre": [
@@ -531,10 +820,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "87000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/interstellar.jpg"
     },
     {
         "name": "King Kong",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2005",
         "duration": "187",
         "genre": [
@@ -555,10 +860,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "63000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/kingkong.jpg"
     },
     {
         "name": "La La Land",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "128",
         "genre": [
@@ -579,10 +900,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "57000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/lalaland.jpg"
     },
     {
         "name": "Man vs. Bee",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2012",
         "duration": "30",
         "genre": [
@@ -601,10 +938,26 @@
         "age": "PG",
         "country": "United States",
         "views": "38000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/manvsbee.jpg"
     },
     {
         "name": "No Time To Die",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2021",
         "duration": "163",
         "genre": [
@@ -625,10 +978,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "71000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/notimetodie.jpg"
     },
     {
         "name": "Teech",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "60",
         "genre": [
@@ -648,10 +1017,26 @@
         "age": "PG",
         "country": "United Kingdom",
         "views": "49000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/teech.jpg"
     },
     {
         "name": "The Big Bang Theory",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2007",
         "duration": "22",
         "genre": [
@@ -671,10 +1056,26 @@
         "age": "PG",
         "country": "United States",
         "views": "52000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thebigbangtheory.jpg"
     },
     {
         "name": "The Crown",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "58",
         "genre": [
@@ -695,10 +1096,26 @@
         "age": "PG-13",
         "country": "United Kingdom",
         "views": "68000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thecrown.jpg"
     },
     {
         "name": "The Departed",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2006",
         "duration": "151",
         "genre": [
@@ -719,10 +1136,26 @@
         "age": "R",
         "country": "United States",
         "views": "78000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thedeparted.jpg"
     },
     {
         "name": "The Matrix",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1999",
         "duration": "136",
         "genre": [
@@ -742,10 +1175,26 @@
         "age": "R",
         "country": "United States",
         "views": "88000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thematrix.jpg"
     },
     {
         "name": "The Office",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2005",
         "duration": "22",
         "genre": [
@@ -764,10 +1213,26 @@
         "age": "PG",
         "country": "United States",
         "views": "76000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/theoffice.jpg"
     },
     {
         "name": "The Simpsons",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1989",
         "duration": "22",
         "genre": [
@@ -787,10 +1252,26 @@
         "age": "PG",
         "country": "United States",
         "views": "68000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thesimpsons.jpg"
     },
     {
         "name": "The Witcher",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2019",
         "duration": "60",
         "genre": [
@@ -811,10 +1292,26 @@
         "age": "18+",
         "country": "Poland",
         "views": "96000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thewitcher.jpg"
     },
     {
         "name": "This Is Us",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "45",
         "genre": [
@@ -835,10 +1332,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "72000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thisisus.jpg"
     },
     {
         "name": "Twin Peaks",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1990",
         "duration": "47",
         "genre": [
@@ -859,10 +1372,26 @@
         "age": "PG",
         "country": "United States",
         "views": "52000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/twinpeaks.jpg"
     },
     {
         "name": "Vertigo",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1958",
         "duration": "128",
         "genre": [
@@ -883,10 +1412,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "87000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/vertigo.jpg"
     },
     {
         "name": "Inception",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2010",
         "duration": "148",
         "genre": [
@@ -907,10 +1452,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "82000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/inception.jpg"
     },
     {
         "name": "The Shawshank Redemption",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1994",
         "duration": "142",
         "genre": [
@@ -929,10 +1490,26 @@
         "age": "18+",
         "country": "United States",
         "views": "96000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/theshawshankredemption.jpg"
     },
     {
         "name": "The Dark Knight",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2008",
         "duration": "152",
         "genre": [
@@ -953,10 +1530,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "82000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thedarkknight.jpg"
     },
     {
         "name": "Pulp Fiction",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1994",
         "duration": "154",
         "genre": [
@@ -976,10 +1569,26 @@
         "age": "18+",
         "country": "United States",
         "views": "93000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/pulpfiction.jpg"
     },
     {
         "name": "The Lord of the Rings: The Fellowship of the Ring",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2001",
         "duration": "178",
         "genre": [
@@ -1000,10 +1609,26 @@
         "age": "PG-13",
         "country": "New Zealand",
         "views": "82000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thelordoftheringsthefellowshipofthering.jpg"
     },
     {
         "name": "Forrest Gump",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1994",
         "duration": "142",
         "genre": [
@@ -1023,10 +1648,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "89000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/forrestgump.jpg"
     },
     {
         "name": "Gladiator",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2000",
         "duration": "155",
         "genre": [
@@ -1046,10 +1687,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "78000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/gladiator.jpg"
     },
     {
         "name": "The Matrix",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1999",
         "duration": "136",
         "genre": [
@@ -1069,10 +1726,26 @@
         "age": "R",
         "country": "United States",
         "views": "82000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thematrix.jpg"
     },
     {
         "name": "The Lion King",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1994",
         "duration": "88",
         "genre": [
@@ -1093,10 +1766,26 @@
         "age": "PG",
         "country": "United States",
         "views": "72000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thelionking.jpg"
     },
     {
         "name": "The Tonight Show Starring Jimmy Fallon",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2014",
         "duration": "45",
         "genre": [
@@ -1111,10 +1800,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "55000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thetonightshowstarringjimmyfallon.jpg"
     },
     {
         "name": "The Simpsons",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1989",
         "duration": "22",
         "genre": [
@@ -1129,10 +1834,26 @@
         "age": "PG",
         "country": "United States",
         "views": "67000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thesimpsons.jpg"
     },
     {
         "name": "60 Minutes",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1968",
         "duration": "47",
         "genre": [
@@ -1146,10 +1867,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "48000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/60minutes.jpg"
     },
     {
         "name": "Grey's Anatomy",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2005",
         "duration": "41",
         "genre": [
@@ -1164,10 +1901,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "70000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/greysanatomy.jpg"
     },
     {
         "name": "Saturday Night Live",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1975",
         "duration": "90",
         "genre": [
@@ -1182,10 +1935,26 @@
         "age": "PG-13",
         "country": "United States",
         "views": "62000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/saturdaynightlive.jpg"
     },
     {
         "name": "Breaking Bad",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2008",
         "duration": "49",
         "genre": [
@@ -1206,10 +1975,26 @@
         "age": "18+",
         "country": "United States",
         "views": "93000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/breakingbad.jpg"
     },
     {
         "name": "Friends",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "1994",
         "duration": "22",
         "genre": [
@@ -1229,10 +2014,26 @@
         "age": "PG",
         "country": "United States",
         "views": "89000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/friends.jpg"
     },
     {
         "name": "Game of Thrones",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2011",
         "duration": "57",
         "genre": [
@@ -1253,10 +2054,26 @@
         "age": "18+",
         "country": "United States",
         "views": "96000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/gameofthrones.jpg"
     },
     {
         "name": "Stranger Things",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "51",
         "genre": [
@@ -1277,10 +2094,26 @@
         "age": "16+",
         "country": "United States",
         "views": "84000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/strangerthings.jpg"
     },
     {
         "name": "The Mandalorian",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2019",
         "duration": "40",
         "genre": [
@@ -1301,10 +2134,26 @@
         "age": "16+",
         "country": "United States",
         "views": "81000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/themandalorian.jpg"
     },
     {
         "name": "The Witcher",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2019",
         "duration": "60",
         "genre": [
@@ -1325,10 +2174,26 @@
         "age": "16+",
         "country": "United States",
         "views": "78000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/thewitcher.jpg"
     },
     {
         "name": "Westworld",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
         "since": "2016",
         "duration": "62",
         "genre": [
@@ -1349,6 +2214,21 @@
         "age": "16+",
         "country": "United States",
         "views": "75000",
+        "streamingDetails": {
+            "quality": [
+                "HD",
+                "SD",
+                "4K"
+            ],
+            "link": "https://streaminglink.com/inception"
+        },
+        "reviews": [
+            {
+                "userId": "64e2a68f9f3e4a8d2a5705c5",
+                "rating": 5,
+                "comment": "Amazing movie!"
+            }
+        ],
         "cover": "/assets/images/medium-sized-movie/westworld.jpg"
     }
 ]

@@ -1,5 +1,6 @@
 import Movie from './Movies.js';
 import BookmarkedComponent from "../component/bookmark.js";
+import { fetchAllMovies, fetchMovieById } from '../webapi/api.js';
 
 export default class Intro {
   constructor(movie) {
@@ -121,63 +122,33 @@ export default class Intro {
 }
 
 async function renderMovie() {
-  let moviesData = '';
-  const movie = await searchMovies();
-
-  const mov = new Intro(movie);
-  moviesData = mov.render();
-  const movieContainer = document.querySelector(".intro-movie");
-  movieContainer.innerHTML = moviesData;
-
-  // Attach the event listener for season change
-  mov.addSeasonChangeListener();
-
-  const recommendations = await filterMoviesByGenres();
-  recommendations.sort((a, b) => b.since - a.since);
-
-  let recommendationsData = '';
-  let i = 0;
-  while (i < 12) {
-    const rec = new Movie(recommendations[i]);
-    recommendationsData += rec.render();
-    i++;
-  }
-  document.querySelector(".movies-container-12").insertAdjacentHTML("beforeend", recommendationsData);
-}
-
-async function fetchMovies() {
-  try {
-    const response = await fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87');
-    const jsonResponse = await response.json();
-    const data = jsonResponse.record;
-
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return [];
-  }
-}
-
-async function searchMovies() {
-  const movies = await fetchMovies();
   const urlParams = new URLSearchParams(window.location.search);
-  const name = urlParams.get('name');
-  const searchedMovie = movies.find(movie => movie.name.toLowerCase() === name.toLowerCase());
-  return searchedMovie;
+  const movieName = urlParams.get('name');
+
+  const movies = await fetchAllMovies();
+  const movie = movies.find(m => m.name.toLowerCase() === movieName.toLowerCase());
+
+  if (movie) {
+    const mov = new Intro(movie);
+    document.querySelector(".intro-movie").innerHTML = mov.render();
+    mov.addSeasonChangeListener();
+  }
+
+  // Example of filtering by genres
+  const genreParam = urlParams.get('genre');
+  if (genreParam) {
+    const recommendations = movies.filter(movie => movie.genre.includes(genreParam.trim()));
+    recommendations.sort((a, b) => b.since - a.since);
+
+    let recommendationsData = '';
+    let i = 0;
+    while (i < 12 && i < recommendations.length) {
+      const rec = new Movie(recommendations[i]);
+      recommendationsData += rec.render();
+      i++;
+    }
+    document.querySelector(".movies-container-12").insertAdjacentHTML("beforeend", recommendationsData);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', renderMovie);
-
-
-async function filterMoviesByGenres() {
-  const movies = await fetchMovies();
-  const urlParams = new URLSearchParams(window.location.search);
-  const genreParam = urlParams.get('genre');
-  const genres = genreParam ? genreParam.split(',') : [];
-  const filteredMovies = movies.filter(movie => {
-    return genres.some(genre => movie.genre.includes(genre.trim()));
-  });
-  return filteredMovies;
-}
-
-
