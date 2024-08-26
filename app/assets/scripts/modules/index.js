@@ -1,9 +1,10 @@
 import Movie from './Movies.js';
 import MovieSliderItem from './MovieSlider.js';
 import MovieThumbnailItem from './MovieThumbnail.js';
+import { fetchAllMovies } from '../webapi/api.js';
 
 class Movies {
-    constructor() { }
+    constructor() {}
 
     async list(container_type) {
         let id;
@@ -26,14 +27,8 @@ class Movies {
                 return;
         }
 
-        // Update the API URL
-        const API_URL = 'https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87';
-
         try {
-            // Fetch data from the new API URL without headers
-            const response = await fetch(API_URL);
-            const jsonResponse = await response.json();
-            const data = jsonResponse.record; // Access the 'record' field where the data is stored
+            const data = await fetchAllMovies(); // Fetch all movies using the API function
 
             // Sort movies by 'since' year in descending order
             data.sort((a, b) => b.since - a.since);
@@ -56,12 +51,10 @@ class Movies {
     }
 };
 
-
 const movies = new Movies();
 movies.list('new-added-movies');
 movies.list('new-added-series');
 movies.list('new-added-tvshows');
-
 
 class MovieMediumSized {
     constructor(movie, rank) {
@@ -91,12 +84,9 @@ class MovieMediumSized {
 class MostViewed {
     async list() {
         try {
-            const response = await fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87');
-            const jsonResponse = await response.json();
-            const data = jsonResponse.record;
+            const data = await fetchAllMovies(); // Fetch all movies using the API function
 
-
-            // Sort movies by 'since' year in descending order
+            // Sort movies by 'views' in descending order
             data.sort((a, b) => b.views - a.views);
 
             let moviesData = '';
@@ -113,7 +103,6 @@ class MostViewed {
 
 const mostViewed = new MostViewed();
 mostViewed.list();
-
 
 function handleNext() {
     const slider = document.querySelector('.most-viewed-movies-slider');
@@ -134,11 +123,6 @@ function handlePrev() {
 document.querySelector('.next').addEventListener('click', handleNext);
 document.querySelector('.prev').addEventListener('click', handlePrev);
 
-
-
-
-
-
 let nextBtn = document.querySelector(".next1");
 let prevBtn = document.querySelector(".prev1");
 
@@ -152,7 +136,6 @@ if (thumbnailItems[0]) {
 } else {
     console.error("No thumbnail items found to append");
 }
-
 
 nextBtn.onclick = function () {
     moveSlider("next");
@@ -181,29 +164,19 @@ function moveSlider(direction) {
     }, 500); // Adjust timing as necessary
 }
 
-
-
-
 const sliderContainer = document.querySelector('.list1');
 const thumbnailContainer = document.querySelector('.thumbnail1');
 
 let sliderMovies = [];
 
-fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87')
-    .then(response => response.json())
-    .then(data => {
-
-        // Access the 'record' array that contains the movies
-        const movies = data.record;
+async function loadSliderMovies() {
+    try {
+        const data = await fetchAllMovies(); // Fetch all movies using the API function
 
         const movieNames = ['13 Reasons Why', '1917', 'American Horror Story', '60 Minutes'];
 
         // Filter movies to match the desired titles
-        if (Array.isArray(movies)) {
-            sliderMovies = movies.filter(movie => movieNames.includes(movie.name));
-        } else {
-            console.error('Movies is not an array:', movies);
-        }
+        sliderMovies = data.filter(movie => movieNames.includes(movie.name));
 
         // Render the movies
         sliderMovies.forEach(movie => {
@@ -213,5 +186,9 @@ fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87')
             const thumbnailItem = new MovieThumbnailItem(movie.poster);
             thumbnailContainer.innerHTML += thumbnailItem.render();
         });
-    })
-    .catch(error => console.error('Error fetching movies:', error));
+    } catch (error) {
+        console.error('Error fetching slider movies:', error);
+    }
+}
+
+loadSliderMovies();

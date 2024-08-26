@@ -1,24 +1,46 @@
-const fetch = require('node-fetch');
-
-async function fetchData() {
+async function fetchAllMovies() {
     try {
-        const response = await fetch('https://api.jsonbin.io/v3/b/6645bc42e41b4d34e4f48a87', {
-            headers: {
-                'X-Master-Key': '$2a$10$BJUFCfND/qIuzfSFZNANRuEiGlTBb3Hp7Z1TSUBfz5GsbE7OSr8.K',
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch data');
-        }
-
-        const data = await response.json();
-        return data;
+      const response = await fetch('http://localhost:3000/movies');
+      if (!response.ok) {
+        throw new Error(`An error occurred: ${response.statusText}`);
+      }
+      const movies = await response.json();
+      return movies;
     } catch (error) {
-        console.error(error);
-        return null;
+      console.error('Error fetching movies:', error.message);
+      return [];
     }
-}
-
-module.exports = fetchData;
+  }
+  
+  // Function to fetch a movie by ID
+  async function fetchMovieById(movieId) {
+    try {
+      const response = await fetch(`http://localhost:3000/movies/${movieId}`);
+      if (!response.ok) {
+        throw new Error(`An error occurred: ${response.statusText}`);
+      }
+      const movie = await response.json();
+      return movie;
+    } catch (error) {
+      console.error(`Error fetching movie with ID ${movieId}:`, error.message);
+      return null;
+    }
+  }
+  
+  // Function to search movies by title or genre
+  async function searchMovies(query) {
+    try {
+      const response = await fetch(`http://localhost:3000/movies?search=${encodeURIComponent(query)}`);
+      if (!response.ok) {
+        throw new Error(`An error occurred: ${response.statusText}`);
+      }
+      const movies = await response.json();
+      return movies;
+    } catch (error) {
+      console.error('Error searching movies:', error.message);
+      return [];
+    }
+  }
+  
+  export { fetchAllMovies, fetchMovieById, searchMovies };
+  
