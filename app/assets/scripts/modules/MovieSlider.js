@@ -3,7 +3,6 @@ export default class MovieSliderItem {
         this.name = movie.name;
         this.genre = movie.genre;
         this.cover = movie.cover;
-        // this.age = movie.age;
     }
 
     render() {

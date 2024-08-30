@@ -1,0 +1,58 @@
+[
+    {
+        "user_id": "1",
+        "username": "john_doe",
+        "email": "john.doe@example.com",
+        "password_hash": "hashed_password_here",
+        "date_joined": "2023-08-30T15:23:45Z",
+        "last_login": "2023-08-29T12:34:56Z",
+        "subscription_plan": "premium",
+        "favorites": ["tt0111161", "tt0068646", "tt0468569"],
+        "watchlist": ["tt1375666", "tt0137523"],
+        "recently_watched": [
+            {
+                "movie_id": "tt0110912",
+                "watched_on": "2023-08-29T10:00:00Z",
+                "progress": 85
+            },
+            {
+                "movie_id": "tt0109830",
+                "watched_on": "2023-08-28T20:15:00Z",
+                "progress": 100
+            }
+        ],
+        "roles": ["user"]
+    },
+    {
+        "user_id": "2",
+        "username": "jane_smith",
+        "email": "jane.smith@example.com",
+        "password_hash": "hashed_password_here",
+        "date_joined": "2023-07-15T08:45:30Z",
+        "last_login": "2023-08-28T14:50:30Z",
+        "subscription_plan": "basic",
+        "favorites": ["tt0133093", "tt0120737"],
+        "watchlist": ["tt0110357"],
+        "recently_watched": [
+            {
+                "movie_id": "tt0109830",
+                "watched_on": "2023-08-27T19:10:00Z",
+                "progress": 45
+            }
+        ],
+        "roles": ["user"]
+    },
+    {
+        "user_id": "3",
+        "username": "admin",
+        "email": "admin@example.com",
+        "password_hash": "hashed_password_here",
+        "date_joined": "2023-01-01T00:00:00Z",
+        "last_login": "2023-08-29T09:00:00Z",
+        "subscription_plan": "premium",
+        "favorites": [],
+        "watchlist": [],
+        "recently_watched": [],
+        "roles": ["admin", "user"]
+    }
+]

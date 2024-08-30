@@ -134,7 +134,6 @@ async function renderMovie() {
     mov.addSeasonChangeListener();
   }
 
-  // Example of filtering by genres
   const genreParam = urlParams.get('genre');
   if (genreParam) {
     const recommendations = movies.filter(movie => movie.genre.includes(genreParam.trim()));

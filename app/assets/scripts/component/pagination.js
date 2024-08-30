@@ -12,7 +12,7 @@ class Pagination extends HTMLElement {
 
     updateMovies(movies) {
         this.movies = movies;
-        this.currentPage = 1; // Reset to the first page
+        this.currentPage = 1;
         this.renderMovies();
         this.updatePaginationButtons();
     }
