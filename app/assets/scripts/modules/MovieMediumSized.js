@@ -7,7 +7,7 @@ export default class MovieMediumSized {
     }
 
     render() {
-        const paddedRank = (this.rank + 1).toString().padStart(2, '0'); // Ensure rank is displayed as '01', '02', etc.
+        const paddedRank = (this.rank + 1).toString().padStart(2, '0');
         const genres = this.genre.join(', ');
         return `
         <article class="movie-medium-sized"><a href="intro.html?name=${this.name}&genre=${this.genre}">

@@ -28,9 +28,8 @@ class Movies {
         }
 
         try {
-            const data = await fetchAllMovies(); // Fetch all movies using the API function
+            const data = await fetchAllMovies();
 
-            // Sort movies by 'since' year in descending order
             data.sort((a, b) => b.since - a.since);
 
             let moviesData = '';
@@ -65,7 +64,7 @@ class MovieMediumSized {
     }
 
     render() {
-        const paddedRank = (this.rank + 1).toString().padStart(2, '0'); // Ensure rank is displayed as '01', '02', etc.
+        const paddedRank = (this.rank + 1).toString().padStart(2, '0');
         const genres = this.genre.join(', ');
         return `
         <article class="movie-medium-sized"><a href="intro.html?name=${this.name}&genre=${this.genre}">
@@ -84,9 +83,8 @@ class MovieMediumSized {
 class MostViewed {
     async list() {
         try {
-            const data = await fetchAllMovies(); // Fetch all movies using the API function
+            const data = await fetchAllMovies();
 
-            // Sort movies by 'views' in descending order
             data.sort((a, b) => b.views - a.views);
 
             let moviesData = '';
@@ -107,19 +105,17 @@ mostViewed.list();
 function handleNext() {
     const slider = document.querySelector('.most-viewed-movies-slider');
     const movieWidth = document.querySelector('.movie-medium-sized').offsetWidth;
-    const scrollDistance = movieWidth + 20; // including margin
+    const scrollDistance = movieWidth + 20;
     slider.scrollLeft += scrollDistance;
 }
 
-// Handle the "prev" button click
 function handlePrev() {
     const slider = document.querySelector('.most-viewed-movies-slider');
     const movieWidth = document.querySelector('.movie-medium-sized').offsetWidth;
-    const scrollDistance = movieWidth + 20; // including margin
+    const scrollDistance = movieWidth + 20;
     slider.scrollLeft -= scrollDistance;
 }
 
-// Add event listeners to the buttons
 document.querySelector('.next').addEventListener('click', handleNext);
 document.querySelector('.prev').addEventListener('click', handlePrev);
 
@@ -161,7 +157,7 @@ function moveSlider(direction) {
 
     setTimeout(() => {
         slider.classList.remove("next1", "prev1");
-    }, 500); // Adjust timing as necessary
+    }, 500);
 }
 
 const sliderContainer = document.querySelector('.list1');
@@ -171,14 +167,12 @@ let sliderMovies = [];
 
 async function loadSliderMovies() {
     try {
-        const data = await fetchAllMovies(); // Fetch all movies using the API function
+        const data = await fetchAllMovies();
 
         const movieNames = ['13 Reasons Why', '1917', 'American Horror Story', '60 Minutes'];
 
-        // Filter movies to match the desired titles
         sliderMovies = data.filter(movie => movieNames.includes(movie.name));
 
-        // Render the movies
         sliderMovies.forEach(movie => {
             const sliderItem = new MovieSliderItem(movie);
             sliderContainer.innerHTML += sliderItem.render();

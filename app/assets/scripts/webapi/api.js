@@ -12,7 +12,6 @@ async function fetchAllMovies() {
     }
   }
   
-  // Function to fetch a movie by ID
   async function fetchMovieById(movieId) {
     try {
       const response = await fetch(`http://localhost:3000/movies/${movieId}`);
@@ -27,7 +26,6 @@ async function fetchAllMovies() {
     }
   }
   
-  // Function to search movies by title or genre
   async function searchMovies(query) {
     try {
       const response = await fetch(`http://localhost:3000/movies?search=${encodeURIComponent(query)}`);
