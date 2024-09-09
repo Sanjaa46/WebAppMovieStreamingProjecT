@@ -148,6 +148,22 @@
   color: rgb(255, 255, 255);
 }
 
+/* Video */
+.video-container{
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  display: flex;
+}
+
+video {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+}
+
+
 @media (max-width: 1358px) {
   .intro-movie .studio-name {
     display: flex;
