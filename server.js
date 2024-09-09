@@ -1,11 +1,11 @@
-const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const path = require('path');
 const { MongoClient, ObjectId } = require('mongodb');
+const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
-
+const router = express.Router();
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -15,20 +15,18 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 // Database and Collections
 const dbName = 'movieStreamingDB';
-const moviesCollectionName = 'movies';
-const usersCollectionName = 'users';
+let moviesCollection, usersCollection;
 
 // Middleware
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'app')));
 app.use(express.json());  // Parse JSON bodies
 
-// Session Middleware (can be customized as needed)
+// Session Middleware
 app.use(session({
-  secret: 'your-secret-key',  // Replace with a strong secret key
+  secret: 'temporary-secret',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false }  // Set to true if using HTTPS
 }));
 
 async function connectToDatabase() {
@@ -36,113 +34,8 @@ async function connectToDatabase() {
     await client.connect();
     console.log('Connected to MongoDB');
     const db = client.db(dbName);
-    const moviesCollection = db.collection(moviesCollectionName);
-    const usersCollection = db.collection(usersCollectionName);
-
-    // Movies Endpoints
-    app.get('/movies', async (req, res) => {
-      try {
-        const movies = await moviesCollection.find().toArray();
-        res.json(movies);
-      } catch (error) {
-        console.error('Error fetching movies:', error.message);
-        res.status(500).json({ message: 'Error fetching movies', error: error.message });
-      }
-    });
-
-    app.get('/movies/:id', async (req, res) => {
-      const movieId = req.params.id;
-      try {
-        const movie = await moviesCollection.findOne({ _id: ObjectId(movieId) });
-        if (movie) {
-          res.json(movie);
-        } else {
-          res.status(404).json({ message: 'Movie not found' });
-        }
-      } catch (error) {
-        console.error('Error fetching movie:', error.message);
-        res.status(500).json({ message: 'Error fetching movie', error: error.message });
-      }
-    });
-
-    // Users Endpoints
-    app.get('/users', async (req, res) => {
-      try {
-        const users = await usersCollection.find().toArray();
-        res.json(users);
-      } catch (error) {
-        console.error('Error fetching users:', error.message);
-        res.status(500).json({ message: 'Error fetching users', error: error.message });
-      }
-    });
-
-    app.get('/users/:id', async (req, res) => {
-      const userId = req.params.id;
-      try {
-        const user = await usersCollection.findOne({ _id: ObjectId(userId) });
-        if (user) {
-          res.json(user);
-        } else {
-          res.status(404).json({ message: 'User not found' });
-        }
-      } catch (error) {
-        console.error('Error fetching user:', error.message);
-        res.status(500).json({ message: 'Error fetching user', error: error.message });
-      }
-    });
-
-    // Authentication Endpoints
-    app.post('/api/user/login', async (req, res) => {
-      const { email, password } = req.body;
-      try {
-        const user = await usersCollection.findOne({ email });
-        if (user && await bcrypt.compare(password, user.password)) {
-          req.session.userId = user._id;  // Set the session
-          res.json({ success: true, message: 'Login successful', isLoggedIn: true });
-        } else {
-          res.status(401).json({ success: false, message: 'Invalid email or password' });
-        }
-      } catch (error) {
-        console.error('Error logging in:', error.message);
-        res.status(500).json({ success: false, message: 'Error logging in', error: error.message });
-      }
-    });
-
-    app.post('/api/user/signup', async (req, res) => {
-      const { email, password } = req.body;
-      try {
-        const existingUser = await usersCollection.findOne({ email });
-        if (existingUser) {
-          return res.status(400).json({ success: false, message: 'User already exists' });
-        }
-        const hashedPassword = await bcrypt.hash(password, 10);  // Hash the password
-        const newUser = { email, password: hashedPassword };
-        const result = await usersCollection.insertOne(newUser);
-        res.status(201).json({ success: true, message: 'User created', user: result.ops[0] });
-      } catch (error) {
-        console.error('Error creating user:', error.message);
-        res.status(500).json({ success: false, message: 'Error creating user', error: error.message });
-      }
-    });
-
-    app.post('/api/user/logout', (req, res) => {
-      req.session.destroy(err => {
-        if (err) {
-          return res.status(500).json({ success: false, message: 'Error logging out' });
-        }
-        res.json({ success: true, message: 'Logout successful' });
-      });
-    });
-
-    // Check login status
-    app.get('/api/user/status', (req, res) => {
-      if (req.session.userId) {
-        res.json({ isLoggedIn: true });
-      } else {
-        res.json({ isLoggedIn: false });
-      }
-    });
-
+    moviesCollection = db.collection('movies');
+    usersCollection = db.collection('users');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error.message);
   }
@@ -150,10 +43,99 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'app', 'index.html'));
+// Route to fetch all movies
+app.get('/movies', async (req, res) => {
+  try {
+    const movies = await moviesCollection.find().toArray();
+    res.json(movies);
+  } catch (error) {
+    console.error('Error fetching movies:', error.message);
+    res.status(500).json({ error: 'An error occurred while fetching movies' });
+  }
 });
 
+// Route to check login status
+router.get('/user/status', (req, res) => {
+  const isLoggedIn = req.session && req.session.userId;
+  res.json({ isLoggedIn: !!isLoggedIn });
+});
+
+// Route for user signup
+router.post('/user/signup', async (req, res) => {
+  const { email, password, username } = req.body;
+
+  if (!email || !password || !username) {
+    return res.status(400).json({ success: false, message: 'Email, username, and password are required' });
+  }
+
+  try {
+    const existingUser = await usersCollection.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ success: false, message: 'Email already in use' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = {
+      user_id: new ObjectId().toString(),
+      username,
+      email,
+      password_hash: hashedPassword,
+      date_joined: new Date().toISOString(),
+      last_login: null,
+      subscription_plan: 'free',
+      favorites: [],
+      watchlist: [],
+      recently_watched: [],
+      roles: ['user']
+    };
+
+    await usersCollection.insertOne(newUser);
+
+    res.json({ success: true, message: 'User signed up successfully' });
+  } catch (error) {
+    console.error('Error signing up:', error.message);
+    res.status(500).json({ success: false, message: 'An error occurred during signup' });
+  }
+});
+
+// Route for user login
+router.post('/user/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ success: false, message: 'Email and password are required' });
+  }
+
+  try {
+    const user = await usersCollection.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ success: false, message: 'User not found' });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password_hash);
+    if (!isMatch) {
+      return res.status(400).json({ success: false, message: 'Invalid credentials' });
+    }
+
+    req.session.userId = user.user_id;
+    await usersCollection.updateOne({ email }, { $set: { last_login: new Date().toISOString() } });
+
+    res.json({ success: true, message: 'Login successful', user: { username: user.username, email: user.email } });
+  } catch (error) {
+    console.error('Error logging in:', error.message);
+    res.status(500).json({ success: false, message: 'An error occurred during login' });
+  }
+});
+
+// Route for user logout
+router.post('/user/logout', (req, res) => {
+  req.session.destroy();
+  res.json({ success: true, message: 'Logout successful' });
+});
+
+// Mount the user-related routes to `/api`
+app.use('/api', router);
+
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server listening on port ${port}`);
 });
