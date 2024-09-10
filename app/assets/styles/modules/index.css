@@ -65,6 +65,12 @@
   border: none;
 }
 
+.most-viewed-movies-container{
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+}
+
 .most-viewed-movies-container h2 {
   position: relative;
   width: 1350px;

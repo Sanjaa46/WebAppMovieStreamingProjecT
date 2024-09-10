@@ -22,20 +22,20 @@ export default class Intro {
 
   renderSeasons() {
     if (!this.seasons || this.seasons.length === 0) return '';
-  
+
     let seasonsOptions = '';
     let episodesOptions = '';
-  
+
     this.seasons.forEach(season => {
       seasonsOptions += `<option value="${season.season_number}">Season ${season.season_number}</option>`;
-  
+
       if (season.season_number === 1) {
         season.episodes.forEach(episode => {
           episodesOptions += `<option value="${episode.episode_number}">Episode ${episode.episode_number}: ${episode.title}</option>`;
         });
       }
     });
-  
+
     return `
       <form id="filterForm">
         <ul>
@@ -52,7 +52,7 @@ export default class Intro {
         </ul>
       </form>`;
   }
-  
+
   addSeasonChangeListener() {
     const seasonDropdown = document.getElementById('season');
     const episodeDropdown = document.getElementById('episode');
@@ -60,7 +60,7 @@ export default class Intro {
     seasonDropdown.addEventListener('change', (event) => {
       const selectedSeasonNumber = parseInt(event.target.value, 10);
       const selectedSeason = this.seasons.find(season => season.season_number === selectedSeasonNumber);
-      
+
       if (selectedSeason) {
         let episodesOptions = '';
         selectedSeason.episodes.forEach(episode => {
@@ -74,7 +74,7 @@ export default class Intro {
   render() {
     const genres = this.genre.join('/');
     const seasonsHtml = this.renderSeasons();
-  
+
     return `
         <img src="${this.cover}" class="cover-image" />
         <div class="poster">
@@ -122,32 +122,56 @@ export default class Intro {
 }
 
 async function renderMovie() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const movieName = urlParams.get('name');
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieName = urlParams.get('name');
+    const movieType = urlParams.get('type');
 
-  const movies = await fetchAllMovies();
-  const movie = movies.find(m => m.name.toLowerCase() === movieName.toLowerCase());
-
-  if (movie) {
-    const mov = new Intro(movie);
-    document.querySelector(".intro-movie").innerHTML = mov.render();
-    mov.addSeasonChangeListener();
-  }
-
-  const genreParam = urlParams.get('genre');
-  if (genreParam) {
-    const recommendations = movies.filter(movie => movie.genre.includes(genreParam.trim()));
-    recommendations.sort((a, b) => b.since - a.since);
-
-    let recommendationsData = '';
-    let i = 0;
-    while (i < 12 && i < recommendations.length) {
-      const rec = new Movie(recommendations[i]);
-      recommendationsData += rec.render();
-      i++;
+    const movies = await fetchAllMovies();
+    if (!movies) {
+      throw new Error('No movies found');
     }
-    document.querySelector(".movies-container-12").insertAdjacentHTML("beforeend", recommendationsData);
+
+    if (movieName) {
+      const movie = movies.find(m => m.name.toLowerCase() === movieName.toLowerCase());
+      if (movie) {
+        const mov = new Intro(movie);
+        const introMovieElement = document.querySelector(".intro-movie");
+        if (introMovieElement) {
+          introMovieElement.innerHTML = mov.render();
+          if (movieType === "series" || movieType === "tv_show") {
+            mov.addSeasonChangeListener();
+          }
+        }
+      } else {
+        console.warn('Movie not found');
+      }
+    }
+
+    const genreParam = urlParams.get('genre');
+    if (genreParam) {
+      const genreList = genreParam.split(',').map(g => g.trim().toLowerCase());
+
+      const recommendations = movies.filter(movie =>
+        genreList.some(genre => movie.genre.map(g => g.toLowerCase()).includes(genre))
+      );
+
+      recommendations.sort((a, b) => b.since - a.since);
+
+      let recommendationsData = '';
+      let i = 0;
+      while (i < 12 && i < recommendations.length) {
+        const rec = new Movie(recommendations[i]);
+        recommendationsData += rec.render();
+        i++;
+      }
+      document.querySelector(".movies-container-12").insertAdjacentHTML("beforeend", recommendationsData);
+    }
+
+  } catch (error) {
+    console.error('Error rendering movie:', error);
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', renderMovie);

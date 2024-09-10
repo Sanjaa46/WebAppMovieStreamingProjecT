@@ -82,7 +82,7 @@ class FooterComponent extends HTMLElement {
       <div class="copy-right">
           <p>
               Copyright &copy; 2024 All right reserved by:
-              <strong>nice kino</strong>
+              <strong>kino site</strong>
           </p>
       </div>
   </footer>
