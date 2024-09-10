@@ -28,10 +28,25 @@ class HeaderComponent extends HTMLElement {
   setupEventListeners() {
     const hamMenu = this.querySelector('.ham-menu');
     const offScreenMenu = this.querySelector('.off-screen-menu');
-    const loginButton = this.querySelector('.login-button');
-    const profileButton = this.querySelector('.profile');
+
+    const loginButtonDesktop = this.querySelector('header.menu .login-button');
+    const profileButtonDesktop = this.querySelector('header.menu .profile');
+
+    const loginButtonMobile = this.querySelector('header.hamburger-header .login-button');
+    const profileButtonMobile = this.querySelector('header.hamburger-header .profile');
+
+    const closeButton = this.querySelectorAll('.close-btn img');
+    const searchCloseButton = this.querySelectorAll('.search-popup .close-btn img');
     const profilePopup = this.querySelector('.profile-popup');
     const logoutButton = this.querySelector('.profile-popup .profile-option a[href="#"]');
+    const searchMobile = this.querySelector('#search-mobile');
+
+    if(searchMobile){
+      searchMobile.addEventListener('click', () => {
+        this.querySelector('.search-popup-container').style.display = "flex";
+        this.querySelector('.search-popup').style.display = "flex";
+      });
+    }
 
     if (logoutButton) {
       logoutButton.addEventListener('click', async (event) => {
@@ -56,36 +71,70 @@ class HeaderComponent extends HTMLElement {
       });
     }
 
-    if (loginButton) {
-      loginButton.addEventListener('click', () => {
-        this.querySelector('.popup').style.display = "flex";
-      });
-    }
+    const setupLoginEvent = (loginButton) => {
+      if (loginButton) {
+        loginButton.addEventListener('click', () => {
+          this.querySelector('.popup').style.display = "flex";
+        });
+      }
+    };
 
-    this.querySelectorAll('.close-btn img').forEach((element) => {
-      element.addEventListener('click', () => {
-        this.querySelector('.popup').style.display = 'none';
-      });
-    });
+    const setupCloseEvent = (closeButtons) => {
+      if (closeButtons) {
+        closeButtons.forEach((element) => {
+          element.addEventListener('click', () => {
+            this.querySelector('.popup').style.display = 'none';
+          });
+        });
+      }
+    };
 
-    if (profileButton) {
-      profileButton.addEventListener('click', () => {
-        profilePopup.style.display = "flex";
-      });
-    }
+    const setupCloseSearchEvent = (searchCloseButtons) => {
+      if (searchCloseButtons) {
+        searchCloseButtons.forEach((element) => {
+          element.addEventListener('click', () => {
+            this.querySelector('.search-popup-container').style.display = 'none';
+          });
+        });
+      }
+    };
+    
+
+    const setupProfileEvent = (profileButton) => {
+      if (profileButton) {
+        profileButton.addEventListener('click', () => {
+          profilePopup.style.display = "flex";
+        });
+      }
+    };
+
+    setupCloseSearchEvent(searchCloseButton);
+
+    setupLoginEvent(loginButtonDesktop);
+    setupProfileEvent(profileButtonDesktop);
+    setupCloseEvent(closeButton);
+
+    setupLoginEvent(loginButtonMobile);
+    setupProfileEvent(profileButtonMobile);
 
     document.addEventListener('click', (event) => {
-      if (profilePopup && !profilePopup.contains(event.target) && !profileButton.contains(event.target)) {
+      if (profilePopup && !profilePopup.contains(event.target) && 
+        !(profileButtonDesktop && profileButtonDesktop.contains(event.target)) && 
+        !(profileButtonMobile && profileButtonMobile.contains(event.target))) {
         profilePopup.style.display = "none";
       }
     });
 
     if (this.isLoggedIn) {
-      if (loginButton) loginButton.style.display = "none";
-      if (profileButton) profileButton.style.display = "flex";
+      loginButtonDesktop?.style.setProperty("display", "none");
+      profileButtonDesktop?.style.setProperty("display", "flex");
+      loginButtonMobile?.style.setProperty("display", "none");
+      profileButtonMobile?.style.setProperty("display", "flex");
     } else {
-      if (loginButton) loginButton.style.display = "flex";
-      if (profileButton) profileButton.style.display = "none";
+      loginButtonDesktop?.style.setProperty("display", "flex");
+      profileButtonDesktop?.style.setProperty("display", "none");
+      loginButtonMobile?.style.setProperty("display", "flex");
+      profileButtonMobile?.style.setProperty("display", "none");
     }
 
     const searchForm = this.querySelector('.search-container');
@@ -93,6 +142,20 @@ class HeaderComponent extends HTMLElement {
       searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const searchInput = searchForm.querySelector('input[name="name"]');
+        const searchQuery = searchInput.value.trim();
+        if (searchQuery) {
+          window.location.href = `movies.html?name=${encodeURIComponent(searchQuery)}`;
+        } else {
+          window.location.href = 'movies.html';
+        }
+      });
+    }
+
+    const searchFormMobile = this.querySelector('.search-popup-container .search-container');
+    if (searchFormMobile) {
+      searchFormMobile.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const searchInput = searchFormMobile.querySelector('input[name="name"]');
         const searchQuery = searchInput.value.trim();
         if (searchQuery) {
           window.location.href = `movies.html?name=${encodeURIComponent(searchQuery)}`;
@@ -136,12 +199,12 @@ class HeaderComponent extends HTMLElement {
       });
     }
 
-    document.getElementById('toggle-signup').addEventListener('click', () => {
+    document.getElementById('toggle-signup')?.addEventListener('click', () => {
       document.querySelector('.login-popup').style.display = 'none';
       document.querySelector('.signup-popup').style.display = 'block';
     });
 
-    document.getElementById('toggle-login').addEventListener('click', () => {
+    document.getElementById('toggle-login')?.addEventListener('click', () => {
       document.querySelector('.login-popup').style.display = 'block';
       document.querySelector('.signup-popup').style.display = 'none';
     });
@@ -226,7 +289,7 @@ class HeaderComponent extends HTMLElement {
     </nav>
     <form class="search-container">
         <img src="assets/images/search.png" alt="search-icon" class="search-icon" />
-        <input type="text" name="name" id="" class="search-input" placeholder="Хайх..." />
+        <input type="text" name="name" id="search-input-desktop" class="search-input" placeholder="Хайх..." />
     </form>
     <a href="#" class="login-button">Нэвтрэх
         <img src="assets/images/login-image.png" alt="login" class="login-image" height="30" width="30" />
@@ -275,7 +338,7 @@ class HeaderComponent extends HTMLElement {
     </nav>
 
     <a href="index.html" id="logo">Logo Movie</a>
-    <a id="search-mobile"><img src="assets/images/search.png" alt="search-icon" class="search-icon"></a>
+    <a href="#" id="search-mobile"><img src="assets/images/search.png" alt="search-icon" class="search-icon"></a>
     <a href="#" class="login-button">Нэвтрэх
         <img src="assets/images/login-image.png" alt="login" class="login-image" height="30" width="30" />
     </a>
@@ -333,6 +396,21 @@ class HeaderComponent extends HTMLElement {
             </div>
         </article>
     </section>
+    
+</div>
+<div class="search-popup-container">
+  <section class="search-popup">
+      <div class="close-btn">
+          <img src="assets/images/Cancel.png" alt="close-btn" />
+      </div>
+      <article class="form">
+          <h2>Хайх</h2>
+          <form class="search-container">
+              <img src="assets/images/search.png" alt="search-icon" class="search-icon" />
+              <input type="text" name="name" id="search-input-mobile" class="search-input" placeholder="Хайх..." />
+          </form>
+      </article>
+  </section>
 </div>
 
 <div class="profile-popup">
@@ -344,6 +422,7 @@ class HeaderComponent extends HTMLElement {
     </ul>
 </div>
 
+    
     `;
   }
 }

@@ -136,6 +136,12 @@ router.post('/user/logout', (req, res) => {
 // Mount the user-related routes to `/api`
 app.use('/api', router);
 
+// Serve the 404 page for unmatched routes
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'app', '404.html'));
+});
+
+// Start the server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

@@ -29,7 +29,7 @@ class FooterComponent extends HTMLElement {
           background-color: rgba(57, 57, 57, 0.38);
           width: 100%;
           height: 290px;
-          margin-top: 200px;
+          margin-top: 400px;
           padding: 30px 0 0 30px;
           border-radius: 10px 10px 0 0;
         }
@@ -82,7 +82,7 @@ class FooterComponent extends HTMLElement {
       <div class="copy-right">
           <p>
               Copyright &copy; 2024 All right reserved by:
-              <strong>nice kino</strong>
+              <strong>kino site</strong>
           </p>
       </div>
   </footer>
