@@ -1,6 +1,6 @@
 import Movie from './Movies.js';
-import BookmarkedComponent from "../component/bookmark.js";
-import { fetchAllMovies, fetchMovieById } from '../webapi/api.js';
+import CommentSection from './CommentSection.js'; // Import the CommentSection component
+import { fetchAllMovies } from '../webapi/api.js';
 
 export default class Intro {
   constructor(movie) {
@@ -94,13 +94,7 @@ export default class Intro {
           <div>
             <p class="movie-genre">${genres}</p>
             <p class="introduction">
-              Street-smart Nathan Drake (Tom Holland) is recruited by seasoned
-              treasure hunter Victor "Sully" Sullivan (Mark Wahlberg) to recover
-              a fortune amassed by Ferdinand Magellan and lost 500 years ago by
-              the House of Moncada. What starts as a heist job for the duo
-              becomes a globe-trotting, white-knuckle race to reach the prize
-              before the ruthless Santiago Moncada (Antonio Banderas), who
-              believes he and his family are the rightful heirs.
+              Movie description goes here...
             </p>
           </div>
           ${seasonsHtml}
@@ -168,10 +162,28 @@ async function renderMovie() {
       document.querySelector(".movies-container-12").insertAdjacentHTML("beforeend", recommendationsData);
     }
 
+    // Add comment section functionality
+    const commentButton = document.getElementById('comment');
+    const commentContainer = document.createElement('div');
+    document.body.appendChild(commentContainer);
+
+    const commentSection = new CommentSection();
+    commentContainer.innerHTML = commentSection.render();
+    commentSection.addEventListeners();
+
+    commentContainer.style.display = 'none'; // Initially hide the comment section
+
+    commentButton.addEventListener('click', () => {
+      if (commentContainer.style.display === 'none') {
+        commentContainer.style.display = 'block'; // Show comment section on click
+      } else {
+        commentContainer.style.display = 'none'; // Hide if already shown
+      }
+    });
+
   } catch (error) {
     console.error('Error rendering movie:', error);
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', renderMovie);
