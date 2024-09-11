@@ -1,5 +1,5 @@
 import Movie from './Movies.js';
-import CommentSection from './CommentSection.js'; // Import the CommentSection component
+import CommentSection from './CommentSection.js'; 
 import { fetchAllMovies } from '../webapi/api.js';
 
 export default class Intro {
@@ -162,7 +162,7 @@ async function renderMovie() {
       document.querySelector(".movies-container-12").insertAdjacentHTML("beforeend", recommendationsData);
     }
 
-    // Add comment section functionality
+    
     const commentButton = document.getElementById('comment');
     const commentContainer = document.createElement('div');
     document.body.appendChild(commentContainer);
@@ -171,13 +171,13 @@ async function renderMovie() {
     commentContainer.innerHTML = commentSection.render();
     commentSection.addEventListeners();
 
-    commentContainer.style.display = 'none'; // Initially hide the comment section
+    commentContainer.style.display = 'none'; 
 
     commentButton.addEventListener('click', () => {
       if (commentContainer.style.display === 'none') {
-        commentContainer.style.display = 'block'; // Show comment section on click
+        commentContainer.style.display = 'block'; 
       } else {
-        commentContainer.style.display = 'none'; // Hide if already shown
+        commentContainer.style.display = 'none'; 
       }
     });
 
