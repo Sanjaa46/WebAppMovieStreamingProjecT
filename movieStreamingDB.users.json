@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "66d1bffc279ceeda9863f706"
+  },
+  "user_id": "1",
+  "username": "john_doe",
+  "email": "john.doe@example.com",
+  "password_hash": "hashed_password_here",
+  "date_joined": "2023-08-30T15:23:45Z",
+  "last_login": "2023-08-29T12:34:56Z",
+  "subscription_plan": "premium",
+  "favorites": [
+    "tt0111161",
+    "tt0068646",
+    "tt0468569"
+  ],
+  "watchlist": [
+    "tt1375666",
+    "tt0137523"
+  ],
+  "recently_watched": [
+    {
+      "movie_id": "tt0110912",
+      "watched_on": "2023-08-29T10:00:00Z",
+      "progress": 85
+    },
+    {
+      "movie_id": "tt0109830",
+      "watched_on": "2023-08-28T20:15:00Z",
+      "progress": 100
+    }
+  ],
+  "roles": [
+    "user"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66d1bffc279ceeda9863f707"
+  },
+  "user_id": "2",
+  "username": "jane_smith",
+  "email": "jane.smith@example.com",
+  "password_hash": "hashed_password_here",
+  "date_joined": "2023-07-15T08:45:30Z",
+  "last_login": "2023-08-28T14:50:30Z",
+  "subscription_plan": "basic",
+  "favorites": [
+    "tt0133093",
+    "tt0120737"
+  ],
+  "watchlist": [
+    "tt0110357"
+  ],
+  "recently_watched": [
+    {
+      "movie_id": "tt0109830",
+      "watched_on": "2023-08-27T19:10:00Z",
+      "progress": 45
+    }
+  ],
+  "roles": [
+    "user"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66d1bffc279ceeda9863f708"
+  },
+  "user_id": "3",
+  "username": "admin",
+  "email": "admin@example.com",
+  "password_hash": "hashed_password_here",
+  "date_joined": "2023-01-01T00:00:00Z",
+  "last_login": "2023-08-29T09:00:00Z",
+  "subscription_plan": "premium",
+  "favorites": [],
+  "watchlist": [],
+  "recently_watched": [],
+  "roles": [
+    "admin",
+    "user"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66de973e82a6ccdd706eb4e6"
+  },
+  "user_id": "66de973e82a6ccdd706eb4e5",
+  "username": "Sanjaa",
+  "email": "sanjaas880@gmail.com",
+  "password_hash": "$2b$10$nXgCnlqvaftKIzKRnQxgJ.PhROJxKNP/p1XWOkB/eS7d1U10tUtMS",
+  "date_joined": "2024-09-09T06:35:42.226Z",
+  "last_login": "2024-09-10T12:27:13.913Z",
+  "subscription_plan": "free",
+  "favorites": [],
+  "watchlist": [],
+  "recently_watched": [],
+  "roles": [
+    "user"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66de9e9656c3b8820dca3257"
+  },
+  "user_id": "66de9e9656c3b8820dca3256",
+  "username": "bat",
+  "email": "bat@gmail.com",
+  "password_hash": "$2b$10$iHy2nl5qQxeIKfvg4jV9J.Puj4sjHkpIJO96g4HqgehjUKTHRmS9u",
+  "date_joined": "2024-09-09T07:07:02.310Z",
+  "last_login": "2024-09-09T07:07:12.271Z",
+  "subscription_plan": "free",
+  "favorites": [],
+  "watchlist": [],
+  "recently_watched": [],
+  "roles": [
+    "user"
+  ]
+}]
